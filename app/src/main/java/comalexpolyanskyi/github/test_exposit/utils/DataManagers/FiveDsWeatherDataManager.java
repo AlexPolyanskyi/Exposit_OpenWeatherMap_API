@@ -1,6 +1,8 @@
 package comalexpolyanskyi.github.test_exposit.utils.DataManagers;
 
 import android.location.Location;
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -20,6 +22,7 @@ public class FiveDsWeatherDataManager extends WeatherDataManager<FiveDaysWeather
     public AnswerDataManager getData(Location location, int age, String lang, String apiKey, Callback call) {
         String url = URL +"&lon="+location.getLongitude()+"&lat="+location.getLatitude()+"&appid="+apiKey+"&lang=ru";
         super.getServerData(url, age, call);
+        Log.i("123", url);
         return new AnswerDataManager(url, age);
     }
 
@@ -44,6 +47,7 @@ public class FiveDsWeatherDataManager extends WeatherDataManager<FiveDaysWeather
     @Override
     public List<FiveDaysWeather> JSONParse(String response, List<FiveDaysWeather> weatherList) throws JSONException {
         weatherList.clear();
+        Log.i("123", response);
         JSONObject jsonData = new JSONObject(response);
         int countItem = jsonData.getInt("cnt");
         JSONArray listJson = jsonData.getJSONArray("list");

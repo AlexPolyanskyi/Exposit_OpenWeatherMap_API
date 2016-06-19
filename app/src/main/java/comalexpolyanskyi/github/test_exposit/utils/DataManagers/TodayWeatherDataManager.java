@@ -1,6 +1,8 @@
 package comalexpolyanskyi.github.test_exposit.utils.DataManagers;
 
 import android.location.Location;
+import android.util.Log;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -41,6 +43,7 @@ public class TodayWeatherDataManager extends WeatherDataManager<TodayWeather> {
 
     @Override
     public List<TodayWeather> JSONParse(String response, List<TodayWeather> list) throws JSONException {
+        Log.i("123", response);
         JSONObject jsonResult = new JSONObject(response);
         JSONArray jsonWeather =jsonResult.getJSONArray("weather");
         JSONObject jsonWeatherObj =  jsonWeather.getJSONObject(0);
