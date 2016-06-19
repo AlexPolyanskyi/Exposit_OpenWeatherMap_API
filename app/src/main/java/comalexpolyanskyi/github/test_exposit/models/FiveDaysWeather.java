@@ -23,35 +23,35 @@ public class FiveDaysWeather implements Weather {
         this.clouds = clouds;
     }
 
-    @Override
+
     public String getPrecipitation() {
         return description;
     }
-    @Override
+
     public String getIcon() {
         return icon;
     }
-    @Override
+
     public double getTemp() {
         return temp;
     }
-    @Override
+
     public double getPressure() {
         return pressure;
     }
-    @Override
+
     public int getHumidity() {
         return humidity;
     }
-    @Override
+
     public int getWindSpeed() {
         return speed;
     }
-    @Override
+
     public String getInfo() {
         return txt;
     }
-    @Override
+
     public int getCloudsProc() {
         return clouds;
     }

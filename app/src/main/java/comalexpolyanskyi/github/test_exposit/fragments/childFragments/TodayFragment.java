@@ -59,7 +59,7 @@ public class TodayFragment extends Fragment implements SwipeRefreshLayout.OnRefr
     }
 
     private void getTodayWeather() {
-        todayWeather = new TodayWeather(getString(R.string.n_a), getString(R.string.n_a), getString(R.string.n_a), 0, 0, 0, 0, 0);
+        todayWeather = new TodayWeather(getString(R.string.n_a), getString(R.string.n_a), 0, 0, 0, 0, 0);
         adapter.startLoading();
         boolean isLocation = getArguments().getBoolean(getString(R.string.type_data_key));
         int MAX_AGE_5 = 5;
