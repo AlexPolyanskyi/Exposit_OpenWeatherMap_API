@@ -24,7 +24,7 @@ import comalexpolyanskyi.github.test_exposit.models.FiveDaysWeather;
 import comalexpolyanskyi.github.test_exposit.utils.DataManagers.FiveDsWeatherDataManager;
 import comalexpolyanskyi.github.test_exposit.utils.DataManagers.WeatherDataManager;
 import comalexpolyanskyi.github.test_exposit.utils.DialogMessage;
-import comalexpolyanskyi.github.test_exposit.utils.adapters.WeatherListFragmentAdapter;
+import comalexpolyanskyi.github.test_exposit.utils.adapters.FiveDaysFragmentAdapter;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
@@ -36,7 +36,7 @@ public class FiveDaysFragment extends Fragment implements SwipeRefreshLayout.OnR
     private List<FiveDaysWeather> responseList;
     private AnswerDataManager answerDataManager;
     private SwipeRefreshLayout mSwipeRefreshLayout;
-    private WeatherListFragmentAdapter adapter;
+    private FiveDaysFragmentAdapter adapter;
     private WeatherDataManager<FiveDaysWeather> weatherDataManager;
     public FiveDaysFragment() {
     }
@@ -51,7 +51,7 @@ public class FiveDaysFragment extends Fragment implements SwipeRefreshLayout.OnR
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_listdays, container, false);
         responseList =  new ArrayList<>();
-        adapter = new WeatherListFragmentAdapter(getActivity(), responseList, rootView);
+        adapter = new FiveDaysFragmentAdapter(getActivity(), responseList, rootView);
         weatherDataManager = new FiveDsWeatherDataManager();
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view_weather);
         recyclerView.setItemAnimator(new DefaultItemAnimator());

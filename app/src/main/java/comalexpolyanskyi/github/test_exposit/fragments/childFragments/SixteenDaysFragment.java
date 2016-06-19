@@ -21,7 +21,8 @@ import comalexpolyanskyi.github.test_exposit.models.SixteenDaysWeather;
 import comalexpolyanskyi.github.test_exposit.utils.DataManagers.SixTDsWeatherDataManager;
 import comalexpolyanskyi.github.test_exposit.utils.DataManagers.WeatherDataManager;
 import comalexpolyanskyi.github.test_exposit.utils.DialogMessage;
-import comalexpolyanskyi.github.test_exposit.utils.adapters.WeatherListFragmentAdapter;
+import comalexpolyanskyi.github.test_exposit.utils.adapters.FiveDaysFragmentAdapter;
+import comalexpolyanskyi.github.test_exposit.utils.adapters.SixteenDaysFragmentAdapter;
 import okhttp3.Call;
 import okhttp3.Callback;
 import okhttp3.Response;
@@ -33,7 +34,7 @@ public class SixteenDaysFragment extends Fragment implements SwipeRefreshLayout.
     private List<SixteenDaysWeather> responseList;
     private AnswerDataManager answerDataManager;
     private SwipeRefreshLayout mSwipeRefreshLayout;
-    private WeatherListFragmentAdapter adapter;
+    private SixteenDaysFragmentAdapter adapter;
     private WeatherDataManager<SixteenDaysWeather> weatherDataManager;
     public SixteenDaysFragment() {
     }
@@ -48,7 +49,7 @@ public class SixteenDaysFragment extends Fragment implements SwipeRefreshLayout.
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_listdays, container, false);
         responseList =  new ArrayList<>();
-        adapter = new WeatherListFragmentAdapter(getActivity(), responseList, rootView);
+        adapter = new SixteenDaysFragmentAdapter(getActivity(), responseList, rootView);
         weatherDataManager = new SixTDsWeatherDataManager();
         RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view_weather);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
