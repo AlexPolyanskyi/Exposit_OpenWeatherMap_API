@@ -45,12 +45,10 @@ public class TodayWeatherDataManager extends WeatherDataManager<TodayWeather> {
         JSONArray jsonWeather =jsonResult.getJSONArray("weather");
         JSONObject jsonWeatherObj =  jsonWeather.getJSONObject(0);
         JSONObject jsonMain = jsonResult.getJSONObject("main");
-        JSONObject jsonSys = jsonResult.getJSONObject("sys");
         JSONObject jsonWind = jsonResult.getJSONObject("wind");
         JSONObject jsonClouds = jsonResult.getJSONObject("clouds");
         list.clear();
-        list.add(new TodayWeather(jsonResult.getString("name")+", "+jsonSys.getString("country"),
-                jsonWeatherObj.getString("description"), jsonWeatherObj.getString("icon"), jsonMain.getDouble("temp"),
+        list.add(new TodayWeather(jsonWeatherObj.getString("description"), jsonWeatherObj.getString("icon"), jsonMain.getDouble("temp"),
                 jsonMain.getDouble("pressure"), jsonMain.getInt("humidity"), jsonWind.getInt("speed"), jsonClouds.getInt("all")));
         return list;
     }

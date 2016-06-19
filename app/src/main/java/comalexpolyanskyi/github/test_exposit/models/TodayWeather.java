@@ -4,7 +4,6 @@ package comalexpolyanskyi.github.test_exposit.models;
  * Created by Алексей on 08.06.2016.
  */
 public class TodayWeather implements Weather {
-    private String city;
     private String precipitation;
     private String icon;
     private double temp;
@@ -13,8 +12,7 @@ public class TodayWeather implements Weather {
     private int windSpeed;
     private int cloudsProc;
 
-    public TodayWeather(String city, String precipitation, String icon, double temp, double pressure, int humidity, int windSpeed, int cloudsProc) {
-        this.city = city;
+    public TodayWeather(String precipitation, String icon, double temp, double pressure, int humidity, int windSpeed, int cloudsProc) {
         this.precipitation = precipitation;
         this.icon = icon;
         this.temp = temp;
@@ -38,10 +36,6 @@ public class TodayWeather implements Weather {
 
     public int getCloudsProc() {
         return cloudsProc;
-    }
-
-    public String getInfo() {
-        return city;
     }
 
     public String getPrecipitation() {
